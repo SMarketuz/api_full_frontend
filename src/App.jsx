@@ -1,31 +1,34 @@
-import { Box, Flex, Heading, Text } from "@chakra-ui/react"
-import { Route, Routes } from "react-router-dom"
-import UserRegister from "./pages/userRegister"
-
+import { Box } from '@chakra-ui/react'
+import { Route, Routes } from 'react-router-dom'
+import UserRegister from './pages/userRegister'
+import {
+	AllUsers,
+	CreateProducts,
+	AllProducts,
+	AdminLayout,
+} from './admin/index.js'
 
 function App() {
+	return (
+		<Box>
+			{/* <Box>Navbar</Box> */}
 
-  return (
-    <Box>
-      <Box>
-        {/* navbar */}
-      </Box>
-      
-      
-      <Box>
-        {/* fouters */}
-        <Routes>
-          <Route path="/" element={<UserRegister />}></Route>
-        </Routes>
-      </Box>
+			<Box>
+				{/* Routers */}
+				<Routes>
+					<Route path='/' element={<UserRegister />} />
 
+					<Route path='/dashboard' element={<AdminLayout />}>
+						<Route path='users' element={<AllUsers />} />
+						<Route path='createProducts' element={<CreateProducts />} />
+						<Route path='allProducts' element={<AllProducts />} />
+					</Route>
+				</Routes>
+			</Box>
 
-
-      <Box>
-        {/* footer */}
-      </Box>
-    </Box>
-  )
+			{/* <Box>Footer</Box> */}
+		</Box>
+	)
 }
 
 export default App

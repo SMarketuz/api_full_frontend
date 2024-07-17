@@ -1,0 +1,5 @@
+export { default as AdminLayout } from './admin-layout/admin-loyaut.jsx'
+export { default as AllProducts } from './all-products/all-products.jsx'
+export { default as AllUsers } from './all-users/all-users'
+export { default as CreateProducts } from './create-products/create-products'
+export { default as Dashboard } from './dashboard/dashboard'
