@@ -28,7 +28,7 @@ const AllUsers = () => {
 	return (
 		<>
 			<Box width='100%' padding='20px'>
-				
+
 				<Text
 					width={'100%'}
 					textAlign={'center'}
@@ -44,7 +44,6 @@ const AllUsers = () => {
 				) : (
 					<TableContainer>
 						<Table variant='simple' width={'100%'}>
-							<TableCaption>Imperial to metric conversion factors</TableCaption>
 							<Thead>
 								<Tr>
 									<Th>N_0</Th>
