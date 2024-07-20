@@ -25,10 +25,15 @@ const AllUsers = () => {
 		})
 	}, [])
 
+	const deleteUser = id => {
+		axios.delete(`${API_URL}/api/user/delete/${id}`).then(() => {
+			setUsers(users.filter(user => console.log(user)))
+		})
+	}
+
 	return (
 		<>
 			<Box width='100%' padding='20px'>
-				
 				<Text
 					width={'100%'}
 					textAlign={'center'}
@@ -51,6 +56,7 @@ const AllUsers = () => {
 									<Th>Name</Th>
 									<Th>Username</Th>
 									<Th isNumeric>Email</Th>
+									<Th>Delete</Th>
 								</Tr>
 							</Thead>
 							<Tbody>
@@ -61,6 +67,12 @@ const AllUsers = () => {
 											<Td>{user.name}</Td>
 											<Td>{user.username}</Td>
 											<Td>{user.email}</Td>
+											<Td
+												cursor={'pointer'}
+												onClick={() => deleteUser(user._id)}
+											>
+												delete
+											</Td>
 										</Tr>
 									)
 								})}
